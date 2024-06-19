@@ -8,6 +8,7 @@ import (
 func TestExists(t *testing.T) {
 	t.Run("Docker found in path", func(t *testing.T) {
 		// Mocking exec.LookPath to return expected path
+		// TODO: fix library selector error
 		exec.LookPath = func(path string) (string, error) {
 			return "/usr/bin/docker", nil
 		}
